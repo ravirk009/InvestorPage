@@ -1,0 +1,30 @@
+#navbar{
+    display: grid;
+background-color: teal;
+color: antiquewhite;
+text-align: center;
+height: 50px;
+width: 20%;
+padding-bottom: 10px;
+border: 2px solid black;
+margin-bottom: 10px;
+
+}
+
+#navbar1{
+    display: grid;
+background-color: teal;
+color: antiquewhite;
+text-align: center;
+height: 50px;
+width: 20%;
+padding-top: 10px;
+border: 2px solid black;
+
+}
+#idfnd{
+    display: flex;
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Page</title>
+</head>
+<body>
+
+    <div id="navbar"><a href ="backend.html">Backend</a></div>
+    <div id="navbar1"><a href="frontend.html">FrontEnd</a></div>
+    
+    <form id="investorForm" >
+        
+        <label>Image URL</label>
+       <input id="idInp" type="text" placeholder="Enter the Image URL"/>
+        <label>Name</label>
+        <input id="idName" type="text" placeholder="Enter Name"/>
+        
+        <label>Company Logo</label>
+        <input id="idLogo" type="text" alt="Company Logo" placeholder="Attach logo"/>
+        <label>Role</label>
+        <input id="idRole" type="text" placeholder="Enter Role"/>
+
+        <input type="submit">
+
+    </form>
+</body>
+</html>
+
+<script>
+
+    document.querySelector("#investorForm").addEventListener("submit",investorFun);
+    
+    var investorData = JSON.parse(localStorage.getItem("investorArrrData")) || [];
+    // var investorData=JSON.parse(localStorage.getItem("investorData"))
+    // if(investorData==null)
+    // {
+    //     investorData=[]
+    // }
+    // else{
+    //     investorData = ;
+    // }
+
+    function investorFun(){
+        
+        event.preventDefault();
+        // console.log("hello");
+
+        
+        // get the detail entered in the input field
+        var investorObj={
+            out: document.querySelector("#idInp").value,
+            out2: document.querySelector("#idName").value,
+            out3: document.querySelector("#idLogo").value,
+            out4: document.querySelector("#idRole").value
+        };
+         
+
+
+         
+        // store the details in local storage
+        // localStorage.setItem("idInp",out);
+        // localStorage.setItem("idName",out2);
+        // localStorage.setItem("idLogo",out3);
+        // localStorage.setItem("idRole",out4);
+
+        // fetch the value in other page from local storage
+
+        investorData.push(investorObj);
+        
+
+        localStorage.setItem("investorArrrData",JSON.stringify(investorData));
+    
+        console.log(investorData); 
+    
+    }
+
+       
+
+
+
+
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, auto);
+            gap: 20px;
+        
+    }
+    p+ idInp{
+        height:50px;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+
+<script>
+
+        var investorLSData = JSON.parse(localStorage.getItem("investorArrrData"));
+        console.log(investorLSData);
+
+        investorLSData.forEach(function(ele){
+            var box = document.createElement("div")
+            var inImg= document.createElement("idInp")
+            inImg.setAttribute("src",ele.out);
+            var inName = document.createElement("idName");
+            inName.innerText=ele.out2
+            var inRole = document.createElement("idRole");
+            
+            inRole.innerText=ele.out4;
+            var inLogo = document.createElement("idLogo")
+
+            inLogo.setAttribute("src",ele.out3);
+
+            box.append(inImg,inName,inRole,inLogo);
+            document.querySelector("#container").append(box);
+
+
+        });
+</script>
